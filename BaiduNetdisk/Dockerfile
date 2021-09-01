@@ -8,8 +8,8 @@ USER root
 
 ENV DISPLAY=":1"
 ENV USER="baidu"
-ENV UID=1000
-ENV GID=0
+ENV UID=1024
+ENV GID=100
 ENV HOME=/home/${USER}
 ARG vnc_password=""
 EXPOSE 5901 6080
@@ -17,9 +17,9 @@ EXPOSE 5901 6080
 ADD xstartup ${HOME}/.vnc/
 
 RUN useradd -g ${GID} -u ${UID} -r -d ${HOME} -s /bin/bash ${USER}
-RUN echo "root:root" | chpasswd
+#RUN echo "root:root" | chpasswd
 # set password of ${USER} to ${USER}
-RUN echo "${USER}:${USER}" | chpasswd
+#RUN echo "${USER}:${USER}" | chpasswd
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends apt-utils sudo git curl wget ca-certificates python3 python3-numpy fluxbox && \
