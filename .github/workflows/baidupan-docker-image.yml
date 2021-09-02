@@ -36,4 +36,5 @@ jobs:
         with:
           push: true
           context: ./BaiduNetdisk
+          file: ./BaiduNetdisk/Dockerfile
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/baidupan:latest
