@@ -4,16 +4,16 @@ on:
   schedule:
     # - cron: "3 5 * * 3"
     - cron: "*/5 * * * *"
-  push:
-    branches:
-      - master
-    paths:
-      - 'BaiduNetdisk/**'
-  pull_request:
-    branches:
-      - master
-    paths:
-      - 'BaiduNetdisk/**'
+  #push:
+   # branches:
+    #  - master
+    #paths:
+     # - 'BaiduNetdisk/**'
+  #pull_request:
+   # branches:
+    #  - master
+    #paths:
+    #  - 'BaiduNetdisk/**'
   workflow_dispatch:
 
 jobs:
