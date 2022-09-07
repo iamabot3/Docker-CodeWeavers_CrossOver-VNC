@@ -2,7 +2,8 @@ name: Build and push baidupan
 
 on:
   schedule:
-    - cron: "3 4 * * 3"
+    # - cron: "3 5 * * 3"
+    - cron: "*/5 * * * *"
   push:
     branches:
       - master
