@@ -7,12 +7,12 @@ on:
   push:
    branches:
      - master
-    paths:
+   paths:
      - 'BaiduNetdisk/**'
   pull_request:
    branches:
      - master
-    paths:
+   paths:
      - 'BaiduNetdisk/**'
   #workflow_dispatch:
 
