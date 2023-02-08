@@ -9,7 +9,7 @@ USER root
 ENV DISPLAY=":1"
 ENV USER="baidu"
 ENV UID=1000
-ENV GID=1000
+ENV GID=100
 ENV HOME=/home/${USER}
 ARG vnc_password=""
 EXPOSE 5901 6080
