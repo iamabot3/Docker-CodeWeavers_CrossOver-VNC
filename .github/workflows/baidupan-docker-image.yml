@@ -14,7 +14,7 @@ on:
      - master
    paths:
      - 'BaiduNetdisk/**'
-  #workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   docker:
