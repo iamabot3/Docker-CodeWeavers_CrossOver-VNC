@@ -1,4 +1,4 @@
-u# Using CentOS 7 base image and VNC
+# Using CentOS 7 base image and VNC
 
 FROM centos:7
 MAINTAINER john.shine <mr.john.shine@gmail.com>
