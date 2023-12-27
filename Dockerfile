@@ -26,7 +26,7 @@ RUN echo "${USER}:${USER}" | chpasswd
 RUN yum check-update -y ; \
     yum install -y --setopt=tsflags=nodocs tigervnc-server xorg-x11-server-utils xorg-x11-server-Xvfb xorg-x11-fonts-* motif xterm && \
     yum install -y --setopt=tsflags=nodocs sudo which wget file zenity && \
-    yum install -y --setopt=tsflags=nodocs freetype.i686 freetype.x86_64 glibc.i686 glibc.x86_64 libICE.i686 libICE.x86_64 libSM.i686 libSM.x86_64 libX11.i686 libX11.x86_64 libXext.i686 libXext.x86_64 libgcc.i686 libgcc.x86_64 libpng.i686 libpng.x86_64 nss-mdns.i686 nss-mdns.x86_64 pygtk2 zlib.i686 zlib.x86_64 && \
+    yum install -y --setopt=tsflags=nodocs freetype.i686 freetype.x86_64 glibc.i686 glibc.x86_64 libICE.i686 libICE.x86_64 libSM.i686 libSM.x86_64 libX11.i686 libX11.x86_64 libXext.i686 libXext.x86_64 libgcc.i686 libgcc.x86_64 libpng.i686 libpng.x86_64 nss-mdns.i686 nss-mdns.x86_64 python3 pygtk2 zlib.i686 zlib.x86_64 && \
     /bin/echo -e "\n${USER}        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers && \
     yum install -y git && \
     git clone -b v0.9.6 https://github.com/wolfcw/libfaketime.git /tmp/libfaketime && \
@@ -73,7 +73,7 @@ RUN cp ${HOME}/.vnc/xstartup ${HOME}/.vnc/xstartup_after
 RUN /bin/echo -e "${INSTALLDIR}/bin/crossover" >> ${HOME}/.vnc/xstartup_after
 
 # install crossover
-RUN /bin/echo -e "wget --no-check-certificate http://crossover.codeweavers.com/redirect/crossover.bin -O /tmp/install-crossover.bin && chmod +x /tmp/install-crossover.bin && /tmp/install-crossover.bin --i-agree-to-all-licenses --destination ${INSTALLDIR} --noreadme --noprompt --nooptions" >> ${HOME}/.vnc/xstartup
+RUN /bin/echo -e "wget --no-check-certificate https://media.codeweavers.com/pub/crossover/cxlinux/demo/install-crossover-23.7.1.bin -O /tmp/install-crossover.bin && chmod +x /tmp/install-crossover.bin && /tmp/install-crossover.bin --i-agree-to-all-licenses --destination ${INSTALLDIR} --noreadme --noprompt --nooptions" >> ${HOME}/.vnc/xstartup
 RUN /bin/echo -e "zenity --info --text=\"Crossover Software install complete.\"" >> ${HOME}/.vnc/xstartup
 RUN /bin/echo -e "rm -f /tmp/install-crossover.bin" >> ${HOME}/.vnc/xstartup
 RUN /bin/echo -e "mv ${HOME}/.vnc/xstartup_after ${HOME}/.vnc/xstartup" >> ${HOME}/.vnc/xstartup
